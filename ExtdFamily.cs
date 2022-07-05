@@ -5,9 +5,10 @@ namespace Learning
 {
     public class ExtdFamily : Family
     {
-        public string father
-        {
-            get; set;
-        }
+        private string king;
+         public ExtdFamily(string king, string queen, string princess, string prince) : base(king,queen,princess,prince)
+         {
+            this.king = king;
+         }
     }          
 }

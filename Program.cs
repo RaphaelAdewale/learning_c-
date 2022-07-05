@@ -48,7 +48,7 @@ namespace Learning
             // works for only positive numbers
             //Console.WriteLine(projects.Exponent(5,20));
 
-            Family Adewale = new Family("Olusanya", "flora", "esther", "jeremiah");
+            Family Adewale = new Family("Victor", "flora", "esther", "jeremiah");
             //Adewale.AssetValue();
             Console.WriteLine(Adewale.GetDaugther());
 
@@ -57,7 +57,7 @@ namespace Learning
         // Introduce yourself
         static void SayHi(string name, int age)
         {
-            Console.WriteLine("Hello " + name + ", your are " + age + " years old");
+            Console.WriteLine($"Hello {name}, your are {age} years old");
         }
 
         //writing a 2d array
