@@ -39,7 +39,7 @@ public class Calculator
         Console.Write("Enter another number: ");
         double numeral2 = Convert.ToInt32(Console.ReadLine());
 
-        if (op == "+")
+        /*if (op == "+")
         {
             Console.WriteLine(numeral1 + numeral2);
         } 
@@ -58,6 +58,24 @@ public class Calculator
         else
         {
             Console.WriteLine("This is an invalid operation. Try again");
+        }*/
+        switch (op)
+        {
+            case "+":
+                Console.WriteLine(numeral1 + numeral2);
+                break;
+            case "-":
+                Console.WriteLine(numeral1 - numeral2);
+                break;
+            case "/":
+                Console.WriteLine(numeral1 / numeral2);
+                break;
+            case "*":
+                Console.WriteLine(numeral1 * numeral2);
+                break;
+            default:
+                Console.WriteLine("This is an invalid operation. Try again");
+                break;
         }
     }
 }
