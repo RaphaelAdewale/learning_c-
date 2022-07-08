@@ -10,13 +10,13 @@ namespace Learning
 3. Decaf - $3
 4. Black Coffee - $2.50
 5. Latte - $4.20");
+            double TotalCoffee = 0;
 
             Start:
             Console.WriteLine("Please make your coffee selection: ");
-            string? CustomerChoice = Console.ReadLine();
-            double TotalCoffee = 0;
+            string CustomerChoice = Console.ReadLine().ToUpper();
 
-            switch (CustomerChoice.ToUpper())
+            switch (CustomerChoice)
             {
                 case "CAPUCCINO":
                     TotalCoffee += 5;
@@ -37,11 +37,12 @@ namespace Learning
                     Console.WriteLine("Invalid selection!!! Please make a selection from the menu");
                     goto Start;
             }
-
+            
+            Decide:
             Console.WriteLine("Do you want to buy another coffee? Yes or No: ");
-            string? CustomerResponse = Console.ReadLine();
+            var CustomerResponse = Console.ReadLine().ToUpper();
 
-            switch (CustomerResponse.ToUpper())
+            switch (CustomerResponse)
             {
                 case "YES":
                     goto Start;
@@ -49,7 +50,7 @@ namespace Learning
                     break;
                 default:
                     Console.WriteLine($"So far, your bill is {TotalCoffee}.\nPlease make a vaid slection (Yes or No) to continue");
-                    goto Start;      
+                    goto Decide;      
             }
 
             Console.WriteLine("Thank you for shopping with us, here is your coffee");
