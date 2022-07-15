@@ -1,8 +1,9 @@
 ﻿using System;
+using Device;
 
 namespace Learning
 {
-    public class Program
+    public class Program : I1, I2
     {
         public static void Main()
         {
@@ -49,8 +50,13 @@ namespace Learning
             //Console.WriteLine(projects.Exponent(5,20));
 
             //Family Adewale = new Family("Victor", "flora", "esther", "jeremiah");
+            //Family Adewale = new Family();
             //Adewale.AssetValue();
             // Console.WriteLine(Adewale.GetDaugther());
+
+            // Family Opeola = new Family();
+            // Opeola = new ExtdFamily("Tosin", "Tofunmi", "Bukunmi", "Dorcas");
+            // Opeola.AssetValue();
 
             //4. Convert strings ti integer
             // DataTypeConversions();
@@ -59,8 +65,57 @@ namespace Learning
             //EvenNumbers();
 
             //6. A coffe shop bill printer
-            CoffeeShop coffeeShop = new CoffeeShop();
-            coffeeShop.BuyCoffee();
+            //CoffeeShop coffeeShop = new CoffeeShop();
+            //coffeeShop.BuyCoffee();
+
+            //PrintEvenNumbers();
+
+            // int i = 0;
+
+            // simpleMethod(ref i);
+
+            // Console.WriteLine(i);   
+
+            // int Total = 0;
+            // int Product = 0;
+            // Calculate(20, 30, out Total, out Product);    
+
+            // Console.WriteLine($"The sum is {Total} and the product is {Product}");
+
+            // int[] Numbers = new int[3];
+
+            // Numbers[0] = 101;
+            // Numbers[1] = 102;
+            // Numbers[2] = 103;
+
+            // ParamsMethod(Numbers);
+            // BaseClass B = new DerivedClass();
+            // B.Print();
+
+            // Customer Raphael = new Customer();
+            // Raphael.Id = 1;
+            // Raphael.Name = "Raphael";
+            // Raphael.PrintDetails();
+
+            // Program P = new Program();
+            // P.InterfaceMethod();
+            // ((I2)P).InterfaceMethod();
+
+            AB ab = new AB();
+            ab.PrintA();
+            ab.PrintB();
+
+        }
+
+        // implementing interface1
+        public void InterfaceMethod()
+        {
+            Console.WriteLine("This is interface 1");
+        }
+
+        void I2.InterfaceMethod()
+        {
+            Console.WriteLine("This is interface 2");
         }
 
         // Introduce yourself
@@ -115,15 +170,53 @@ namespace Learning
         {
             int[] evennumbers = new int[10];
 
-            for (int i = 0; i < 10; i++)
+            // for (int i = 0; i < 10; i++)
+            // {
+            //     if (i % 2 == 0)
+            //     {
+            //         evennumbers[i] = i;
+            //         Console.WriteLine(i);
+            //     }
+            // }
+
+            foreach (int j in evennumbers)
             {
-                if (i % 2 == 0)
-                {
-                    evennumbers[i] = i;
-                    Console.WriteLine(i);
-                }
+                Console.WriteLine(j);
             }
         }
 
+        static void PrintEvenNumbers()
+        {
+            Console.WriteLine("Please enter your target: ");
+            int userTarget = Convert.ToInt32(Console.ReadLine());
+            int Start = 0;
+
+            while (Start < userTarget)
+            {
+                Console.WriteLine(Start);
+                Start += 2;
+            }
+        }
+
+        static void simpleMethod(ref int j)
+        {
+            j = 101;
+        }
+
+        static void Calculate(int FN, int SN, out int Sum, out int Product)
+        {
+            Sum = FN + SN;
+            Product = FN * SN;
+        }
+
+        static void ParamsMethod(params int[] Numbers)
+        {
+            Console.WriteLine($"There are {Numbers.Length} elements in the Numbers array");
+
+            foreach (int i in Numbers)
+            {
+                Console.WriteLine(i);
+            }
+        }
     }
 }

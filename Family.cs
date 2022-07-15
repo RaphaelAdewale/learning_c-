@@ -9,7 +9,10 @@ namespace Learning
 
         public string? Father
         {
-            get {return father;}
+            get 
+            {
+                return father;
+            }
             set 
             {
                 if(value == "Victor")
@@ -29,6 +32,12 @@ namespace Learning
             return daugther;
         }
 
+        //empty contructor
+        public Family() : this("No king", "No queen", "No princess", "No prince")
+        {
+            
+        }
+
         public Family(string king, string queen, string princess, string prince)
         {
             Father = king;
@@ -37,7 +46,7 @@ namespace Learning
             son = prince;
         }
 
-        public void AssetValue()
+        public virtual void AssetValue()
         {
             double cash;
             double land;
